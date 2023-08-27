@@ -19,7 +19,7 @@ const HeroesAddForm = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [element, setElement] = useState('');
-    const { filters } = useSelector();
+    const { filters, filtersLoadingStatus } = useSelector(state => state);
 
     const { request } = useHttp();
     const dispatch = useDispatch();
@@ -39,27 +39,27 @@ const HeroesAddForm = () => {
         setElement('');
     }
 
-    const renderFilters = (arr) => {
-        if (arr.length === 0) {
-            return <h5 className="text-center mt-5">Фильтры не найдены</h5>
+    const renderFilters = (arr, status) => {
+        if (status === 'loading') {
+            return <option>Загрузка компонентов</option>
+        } else if (status === 'error') {
+            return <option>Ошибка загрузки</option>
         }
 
-        return arr.map(({name, label, className}) => {
-            const btnClass = classNames('btn', className, {
-                'active' : name === activeFilter
+        if (arr && arr.length > 0) {
+            return arr.map(({name, label}) => {
+                if (name === 'all') return;
+    
+                return <option 
+                    key={name}
+                    value={name}>
+                        {label}
+                </option>
             })
-
-            return <button 
-                className={btnClass}
-                key={name}
-                id={name}
-                onClick={() => dispatch(activeFilterChanged(name))}>
-                    {label}
-            </button>
-        })
+        }
     }
 
-    const viewFilters = renderFilters(filters);
+    const viewFilters = renderFilters(filters, filtersLoadingStatus);
 
     return (
         <form className="border p-4 shadow-lg rounded" onSubmit={onHeroesAdd}>
@@ -98,11 +98,8 @@ const HeroesAddForm = () => {
                     className="form-select" 
                     id="element" 
                     name="element">
-                    <option >Я владею элементом...</option>
-                    <option value="fire">Огонь</option>
-                    <option value="water">Вода</option>
-                    <option value="wind">Ветер</option>
-                    <option value="earth">Земля</option>
+                    <option value="">Я владею элементом...</option>
+                    {viewFilters}
                 </select>
             </div>
 
