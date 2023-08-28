@@ -1,10 +1,16 @@
 {
   "heroes": [
     {
-      "id": "fdcc953e-5651-49cc-9866-156ffcbe3276",
-      "name": "34535",
-      "description": "345345",
-      "element": "fire"
+      "id": "13fc17e3-e8e8-455b-9e86-ac5d34266a47",
+      "name": "45",
+      "description": "345354",
+      "element": "water"
+    },
+    {
+      "id": "5cf20739-7515-4b17-9bf1-e49edcae7649",
+      "name": "Илья12313",
+      "description": "323424",
+      "element": "earth"
     }
   ],
   "filters": [
