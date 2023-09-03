@@ -1,46 +1,60 @@
 {
   "heroes": [
     {
-      "id": "13fc17e3-e8e8-455b-9e86-ac5d34266a47",
-      "name": "45",
-      "description": "345354",
+      "id": "995840f6-f807-4b61-9c2c-993ab534ff4d",
+      "name": "Илья",
+      "description": "Пархаю как бабочка",
+      "element": "fire"
+    },
+    {
+      "id": "d587a2c0-b533-4c5a-ab81-5d362235fd8c",
+      "name": "Антон",
+      "description": "Жалю как пчела",
       "element": "water"
     },
     {
-      "id": "5cf20739-7515-4b17-9bf1-e49edcae7649",
-      "name": "Илья12313",
-      "description": "323424",
+      "id": "0d631e3c-ae8e-4f10-a474-a9807f684c77",
+      "name": "Кузьма",
+      "description": "Взломаю любой замок",
       "element": "earth"
+    },
+    {
+      "id": "d60c44da-7b82-45ec-9f46-b78fee780fa7",
+      "name": "Владимир",
+      "description": "Метко стреляю",
+      "element": "water"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
     }
-  ],
-  "maxid": [
-    4
   ]
 }
